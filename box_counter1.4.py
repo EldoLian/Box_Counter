@@ -10,7 +10,6 @@ Created on Mon Apr  4 00:57:36 2022
 
 import tkinter
 from tkinter import *
-from tkinter.messagebox import *
 from tkinter import messagebox
 import pandas as pd
 
