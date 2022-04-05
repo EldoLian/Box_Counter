@@ -6,57 +6,6 @@ Created on Mon Apr  4 00:57:36 2022
 @author: lian
 """
 
-# GUI试验
-# import tkinter
-# root = tkinter.Tk()
-# root.title('hello!')
-# root.geometry('1000x600')
-# label = tkinter.Label(root, text="Python, tkinter!")
-# label.pack()
-# # button1 = tkinter.Entry(root)
-# # button1.pack()
-# button2 = tkinter.Button(root, text="按钮2", fg='blue')
-# button2.pack(side=tkinter.RIGHT)
-# root.mainloop()
-
-
-
-
-# 目的：用户可以在此维护某分类、年度、保管期限下的最新盒号，并支持导出操作记录
-# cata_list = ["04.01", "04.02"]
-# print(cata_list)
-
-# 读取试验
-# import pandas as pd
-# file = "/Users/lian/PY\ Spyder/box_counter.csv"
-# box_counter_csv = pd.read_csv("box_counter.csv")
-# for i in range(len(box_counter_csv)):
-#     if str(box_counter_csv['cata'][i])=="4.02":
-#         print(box_counter_csv['cata'][i])
-
-# year = '2000'
-# time = 'Y'
-# for i in range(len(box_counter_csv)):
-#     if str(box_counter_csv['cata'][i])=="4.02" and str(box_counter_csv['year'][i])==year \
-#     and str(box_counter_csv['stor_time'][i])==time:
-#         print(box_counter_csv['latest_boxN'][i])
-
-# 写入试验
-# cata = '4.02'
-# year = '2003'
-# time = 'Y'
-# latest_boxN = 0+5
-# add_value = [cata, year, time, latest_boxN]
-# add_row = pd.DataFrame([add_value],columns=['cata','year','stor_time','latest_boxN'])
-# # # add_row.to_csv('box_counter.csv')
-
-# # box_counter_csv.loc[6]=[6,'4.02','2003','Y','80']
-# # box_counter_csv.to_csv('box_counter.csv')
-
-# box_counter_csv = box_counter_csv.append(add_row, ignore_index=True)
-# print(box_counter_csv)
-# box_counter_csv.to_csv('box_counter.csv',index=False)
-
 # *****正式编码*****
 
 import tkinter
@@ -64,8 +13,6 @@ from tkinter import *
 from tkinter.messagebox import *
 from tkinter import messagebox
 import pandas as pd
-
-
 
 cata_list = ["1.01","1.02","1.03","1.04","1,05","1.06", \
    "2.01","2.02","2.03","2.04","2.05","2.06","2.07","2.08","2.09","2.10","2.11","2.12","2.13","2.14","2.15","2.16", \
@@ -173,10 +120,6 @@ var1 = tkinter.StringVar()
 list_cata = tkinter.OptionMenu(root,var1,*cata_list)
 list_cata.pack()
 
-# var2 = tkinter.StringVar()
-# list_year = tkinter.OptionMenu(root,var2,*year_list)
-# list_year.pack()
-
 #年度输入框
 entry2 = Entry(root)
 entry2.pack()
@@ -189,10 +132,6 @@ list_time_list.pack()
 
 button_query = tkinter.Button(root,text='查询',command=query)
 button_query.pack()
-
-# text1 = Text(root, width=12, height=2, undo=True, autoseparators=False)
-# text1.pack()
-# text1.insert(INSERT, '当前最大盒号：')
 
 entry1 = Entry(root)
 entry1.pack()
